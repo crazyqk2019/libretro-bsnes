@@ -1,4 +1,4 @@
-#include <cassert>
+﻿#include <cassert>
 #include "libretro.h"
 
 static retro_environment_t environ_cb;
@@ -89,29 +89,29 @@ static void flush_variables()
 	variable = { "bsnes_blur_emulation", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Video/BlurEmulation", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Video/BlurEmulation", false);
 	}
 
 	variable = { "bsnes_hotfixes", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/Hotfixes", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/Hotfixes", false);
 	}
 
 	variable = { "bsnes_entropy", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "None") == 0)
+		if (strcmp(variable.value, "无") == 0)
 			emulator->configure("Hacks/Entropy", "None");
-		else if (strcmp(variable.value, "Low") == 0)
+		else if (strcmp(variable.value, "低") == 0)
 			emulator->configure("Hacks/Entropy", "Low");
-		else if (strcmp(variable.value, "High") == 0)
+		else if (strcmp(variable.value, "高") == 0)
 			emulator->configure("Hacks/Entropy", "High");
 	}
 
@@ -125,9 +125,9 @@ static void flush_variables()
 	variable = { "bsnes_cpu_fastmath", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/CPU/FastMath", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/CPU/FastMath", false);
 	}
 
@@ -148,45 +148,45 @@ static void flush_variables()
 	variable = { "bsnes_ppu_fast", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/Fast", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/Fast", false);
 	}
 
 	variable = { "bsnes_ppu_deinterlace", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/Deinterlace", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/Deinterlace", false);
 	}
 
 	variable = { "bsnes_ppu_no_sprite_limit", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/NoSpriteLimit", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/NoSpriteLimit", false);
 	}
 
 	variable = { "bsnes_ppu_no_vram_blocking", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/NoVRAMBlocking", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/NoVRAMBlocking", false);
 	}
 
 	variable = { "bsnes_ppu_show_overscan", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			program->overscan = true;
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			program->overscan = false;
 	}
 
@@ -202,72 +202,72 @@ static void flush_variables()
 	variable = { "bsnes_mode7_perspective", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Perspective", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Perspective", false);
 	}
 
 	variable = { "bsnes_mode7_supersample", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Supersample", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Supersample", false);
 	}
 
 	variable = { "bsnes_mode7_mosaic", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Mosaic", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/PPU/Mode7/Mosaic", false);
 	}
 
 	variable = { "bsnes_dsp_fast", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/DSP/Fast", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/DSP/Fast", false);
 	}
 
 	variable = { "bsnes_dsp_cubic", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/DSP/Cubic", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/DSP/Cubic", false);
 	}
 
 	variable = { "bsnes_dsp_echo_shadow", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/DSP/EchoShadow", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/DSP/EchoShadow", false);
 	}
 
 	variable = { "bsnes_coprocessor_delayed_sync", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/Coprocessor/DelayedSync", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/Coprocessor/DelayedSync", false);
 	}
 
 	variable = { "bsnes_coprocessor_prefer_hle", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "ON") == 0)
+		if (strcmp(variable.value, "开启") == 0)
 			emulator->configure("Hacks/Coprocessor/PreferHLE", true);
-		else if (strcmp(variable.value, "OFF") == 0)
+		else if (strcmp(variable.value, "关闭") == 0)
 			emulator->configure("Hacks/Coprocessor/PreferHLE", false);
 	}
 
@@ -280,7 +280,7 @@ static void flush_variables()
 	variable = { "bsnes_run_ahead_frames", nullptr };
 	if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &variable) && variable.value)
 	{
-		if (strcmp(variable.value, "OFF") == 0)
+		if (strcmp(variable.value, "关闭") == 0)
 			run_ahead_frames = 0;
 		else
 			run_ahead_frames = atoi(variable.value);
@@ -342,8 +342,8 @@ static void set_environment_info(retro_environment_t cb)
     };
 
     static const struct retro_subsystem_rom_info sgb_roms[] = {
-        { "Game Boy ROM", "gb|gbc", true, false, true, gb_memory, 1 },
-        { "Super Game Boy ROM", "smc|sfc|swc|fig|bs", true, false, true, sgb_memory, 1 },
+        { "Game Boy游戏", "gb|gbc", true, false, true, gb_memory, 1 },
+        { "Super Game Boy游戏", "smc|sfc|swc|fig|bs", true, false, true, sgb_memory, 1 },
     };
 
     static const struct retro_subsystem_info subsystems[] = {
@@ -354,17 +354,17 @@ static void set_environment_info(retro_environment_t cb)
 	cb(RETRO_ENVIRONMENT_SET_SUBSYSTEM_INFO,  (void*)subsystems);
 
 	static const retro_controller_description port_1[] = {
-		{ "SNES Joypad", RETRO_DEVICE_JOYPAD },
-		{ "SNES Mouse", RETRO_DEVICE_MOUSE },
+		{ "SNES手柄", RETRO_DEVICE_JOYPAD },
+		{ "SNES鼠标", RETRO_DEVICE_MOUSE },
 	};
 
 	static const retro_controller_description port_2[] = {
 		{ "SNES Joypad", RETRO_DEVICE_JOYPAD },
 		{ "SNES Mouse", RETRO_DEVICE_MOUSE },
-		{ "Multitap", RETRO_DEVICE_JOYPAD_MULTITAP },
-		{ "SuperScope", RETRO_DEVICE_LIGHTGUN_SUPER_SCOPE },
-		{ "Justifier", RETRO_DEVICE_LIGHTGUN_JUSTIFIER },
-		{ "Justifiers", RETRO_DEVICE_LIGHTGUN_JUSTIFIERS },
+		{ "手柄多分插", RETRO_DEVICE_JOYPAD_MULTITAP },
+		{ "SuperScope光枪", RETRO_DEVICE_LIGHTGUN_SUPER_SCOPE },
+		{ "Justifier光枪", RETRO_DEVICE_LIGHTGUN_JUSTIFIER },
+		{ "多个Justifier光枪", RETRO_DEVICE_LIGHTGUN_JUSTIFIERS },
 	};
 
 	static const retro_controller_info ports[] = {
@@ -376,70 +376,70 @@ static void set_environment_info(retro_environment_t cb)
 	cb(RETRO_ENVIRONMENT_SET_CONTROLLER_INFO, const_cast<retro_controller_info *>(ports));
 
 	static const retro_input_descriptor desc[] = {
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "D-Pad Down" },
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "左" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "上" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "下" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "右" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B,     "B" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A,     "A" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "X" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "Y" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "L" },
 		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "R" },
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "Select" },
-		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "选择" },
+		{ 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "开始" },
 
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "D-Pad Down" },
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "左" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "上" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "下" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "右" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B,     "B" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A,     "A" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "X" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "Y" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "L" },
 		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "R" },
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "Select" },
-		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "选择" },
+		{ 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "开始" },
 
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "D-Pad Down" },
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "左" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "上" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "下" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "右" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B,     "B" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A,     "A" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "X" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "Y" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "L" },
 		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "R" },
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "Select" },
-		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "选择" },
+		{ 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "开始" },
 
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "D-Pad Down" },
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "左" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "上" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "下" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "右" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B,     "B" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A,     "A" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "X" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "Y" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "L" },
 		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "R" },
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "Select" },
-		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "选择" },
+		{ 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "开始" },
 
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "D-Pad Left" },
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "D-Pad Up" },
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "D-Pad Down" },
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "D-Pad Right" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_LEFT,  "左" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_UP,    "上" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_DOWN,  "下" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_RIGHT, "右" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_B,     "B" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_A,     "A" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "X" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "Y" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "L" },
 		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "R" },
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "Select" },
-		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,   "选择" },
+		{ 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "开始" },
 
 		{ 0 },
 	};
@@ -447,30 +447,30 @@ static void set_environment_info(retro_environment_t cb)
 	cb(RETRO_ENVIRONMENT_SET_INPUT_DESCRIPTORS, const_cast<retro_input_descriptor *>(desc));
 
 	static const retro_variable vars[] = {
-		{ "bsnes_aspect_ratio", "Aspect Ratio; Auto|8:7|4:3|NTSC|PAL" },
-		{ "bsnes_blur_emulation", "Blur emulation; OFF|ON" },
-		{ "bsnes_entropy", "Entropy (randomization); Low|High|None" },
-		{ "bsnes_hotfixes", "Hotfixes; OFF|ON" },
-		{ "bsnes_cpu_overclock", "CPU Overclocking; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|10|20|30|40|50|60|70|80|90" },
-		{ "bsnes_cpu_fastmath", "CPU Fast Math; OFF|ON" },
-		{ "bsnes_sa1_overclock", "SA1 Coprocessor Overclocking; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|10|20|30|40|50|60|70|80|90" },
-		{ "bsnes_sfx_overclock", "SuperFX Coprocessor Overclocking; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|410|420|430|440|450|460|470|480|490|500|510|520|530|540|550|560|570|580|590|600|610|620|630|640|650|660|670|680|690|700|710|720|730|740|750|760|770|780|790|800|10|20|30|40|50|60|70|80|90" },
-		{ "bsnes_ppu_fast", "PPU Fast mode; ON|OFF" },
-		{ "bsnes_ppu_deinterlace", "PPU Deinterlace; ON|OFF" },
-		{ "bsnes_ppu_no_sprite_limit", "PPU No sprite limit; OFF|ON" },
-		{ "bsnes_ppu_no_vram_blocking", "PPU No VRAM blocking; OFF|ON" },
-		{ "bsnes_ppu_show_overscan", "Show Overscan; OFF|ON" },
-		{ "bsnes_mode7_scale", "HD Mode 7 Scale; 1x|2x|3x|4x|5x|6x|7x|8x" },
-		{ "bsnes_mode7_perspective", "HD Mode 7 Perspective correction; ON|OFF" },
-		{ "bsnes_mode7_supersample", "HD Mode 7 Supersampling; OFF|ON" },
-		{ "bsnes_mode7_mosaic", "HD Mode 7 HD->SD Mosaic; ON|OFF" },
-		{ "bsnes_dsp_fast", "DSP Fast mode; ON|OFF" },
-		{ "bsnes_dsp_cubic", "DSP Cubic interpolation; OFF|ON" },
-		{ "bsnes_dsp_echo_shadow", "DSP Echo shadow RAM; OFF|ON" },
-		{ "bsnes_coprocessor_delayed_sync", "Coprocessor Delayed Sync; ON|OFF" },
-		{ "bsnes_coprocessor_prefer_hle", "Coprocessor Prefer HLE; ON|OFF" },
-		{ "bsnes_sgb_bios", "Preferred Super GameBoy BIOS (restart); SGB1.sfc|SGB2.sfc" },
-		{ "bsnes_run_ahead_frames", "Amount of frames for run-ahead; OFF|1|2|3|4" },
+		{ "bsnes_aspect_ratio", "宽高比; 自动|8:7|4:3|NTSC|PAL" },
+		{ "bsnes_blur_emulation", "模糊效果模拟; 关闭|开启" },
+		{ "bsnes_entropy", "无序（随机化）; 低|高|无" },
+		{ "bsnes_hotfixes", "热修复; 关闭|开启" },
+		{ "bsnes_cpu_overclock", "CPU超频; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|10|20|30|40|50|60|70|80|90" },
+		{ "bsnes_cpu_fastmath", "CPU快速数学计算; 关闭|开启" },
+		{ "bsnes_sa1_overclock", "SA1协处理器超频; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|10|20|30|40|50|60|70|80|90" },
+		{ "bsnes_sfx_overclock", "SuperFX协处理器超频; 100|110|120|130|140|150|160|170|180|190|200|210|220|230|240|250|260|270|280|290|300|310|320|330|340|350|360|370|380|390|400|410|420|430|440|450|460|470|480|490|500|510|520|530|540|550|560|570|580|590|600|610|620|630|640|650|660|670|680|690|700|710|720|730|740|750|760|770|780|790|800|10|20|30|40|50|60|70|80|90" },
+		{ "bsnes_ppu_fast", "PPU快速模式; 开启|关闭" },
+		{ "bsnes_ppu_deinterlace", "PPU反隔行; 开启|关闭" },
+		{ "bsnes_ppu_no_sprite_limit", "PPU无角色数显示; 关闭|开启" },
+		{ "bsnes_ppu_no_vram_blocking", "PPU无VRAM阻塞; 关闭|开启" },
+		{ "bsnes_ppu_show_overscan", "显示过扫描; 关闭|开启" },
+		{ "bsnes_mode7_scale", "HD模式7缩放; 1x|2x|3x|4x|5x|6x|7x|8x" },
+		{ "bsnes_mode7_perspective", "HD模式7透视校正; 开启|关闭" },
+		{ "bsnes_mode7_supersample", "HD模式7超采样; 关闭|开启" },
+		{ "bsnes_mode7_mosaic", "HD模式7 HD->SD马赛克; 开启|关闭" },
+		{ "bsnes_dsp_fast", "DSP快速模式; 开启|关闭" },
+		{ "bsnes_dsp_cubic", "DSP立方插值; 关闭|开启" },
+		{ "bsnes_dsp_echo_shadow", "DSP回响阴影RAM; 关闭|开启" },
+		{ "bsnes_coprocessor_delayed_sync", "协处理器延迟同步; 开启|关闭" },
+		{ "bsnes_coprocessor_prefer_hle", "协处理器优先HLE; 开启|关闭" },
+		{ "bsnes_sgb_bios", "Super GameBoy BIOS（须重启）; SGB1.sfc|SGB2.sfc" },
+		{ "bsnes_run_ahead_frames", "超前运行的帧数; 关闭|1|2|3|4" },
 		{ nullptr },
 	};
 	cb(RETRO_ENVIRONMENT_SET_VARIABLES, const_cast<retro_variable *>(vars));
